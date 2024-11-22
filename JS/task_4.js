@@ -62,7 +62,9 @@ console.log("\n");
 
 // Напишіть функцію categorizeItems, яка приймає перший аргумент category і будь-яку кількість додаткових аргументів items, а потім повертає об’єкт, де ключ — це категорія, а значення — масив елементів.
 
-function categorizeItems(category, ...items) {}
+function categorizeItems(category, ...items) {
+  return { [category]: items };
+}
 
 console.log(categorizeItems("Fruits", "Apple", "Banana", "Cherry"));
 // { Fruits: ["Apple", "Banana", "Cherry"] }
@@ -78,15 +80,16 @@ console.log("\n");
 //  • first — перший аргумент,
 //  • rest — масив усіх інших аргументів.
 
-// function splitFirstAndRest(...args) {
-//   // ваш код тут
-// }
+function splitFirstAndRest(...args) {
+  const [first, ...rest] = args;
+  return { first, rest };
+}
 
-// console.log(splitFirstAndRest(1, 2, 3, 4));
-// // { first: 1, rest: [2, 3, 4] }
+console.log(splitFirstAndRest(1, 2, 3, 4));
+// { first: 1, rest: [2, 3, 4] }
 
-// console.log(splitFirstAndRest("a", "b", "c"));
-// // { first: "a", rest: ["b", "c"] }
+console.log(splitFirstAndRest("a", "b", "c"));
+// { first: "a", rest: ["b", "c"] }
 
 console.log("\n");
 
@@ -94,15 +97,15 @@ console.log("\n");
 
 // Напишіть функцію mergeArrays, яка приймає перший масив як обов’язковий аргумент і будь-яку кількість інших масивів як залишкові аргументи. Функція повинна повертати новий масив, що містить всі елементи з усіх масивів.
 
-// function mergeArrays(firstArray, ...otherArrays) {
-//   // ваш код тут
-// }
+function mergeArrays(firstArray, ...otherArrays) {
+  return firstArray.concat(...otherArrays);
+}
 
-// console.log(mergeArrays([1, 2], [3, 4], [5, 6]));
-// // [1, 2, 3, 4, 5, 6]
+console.log(mergeArrays([1, 2], [3, 4], [5, 6]));
+// [1, 2, 3, 4, 5, 6]
 
-// console.log(mergeArrays(["a", "b"], ["c", "d"], ["e", "f"]));
-// // ["a", "b", "c", "d", "e", "f"]
+console.log(mergeArrays(["a", "b"], ["c", "d"], ["e", "f"]));
+// ["a", "b", "c", "d", "e", "f"]
 
 console.log("\n");
 console.log("\n");
